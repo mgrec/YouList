@@ -10,13 +10,9 @@ require_once "config.php";
 use Controller\indexController;
 
 $app->get('/', function ($request, $response, $args) {
-    echo 'Hello ';
-});
 
 
-$app->get('/{name}', function ($request, $response, $args) {
-    $indexController = new indexController();
-    $indexController->render($args['name']);
-});
+    return $this->view->render($response, 'pages/home.twig', []);
+})->setName('home');
 
 $app->run();

@@ -13,6 +13,7 @@ class ComposerStaticInitab5a1c3e5dd87a60f271e1f2be3aaa51
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -38,6 +39,10 @@ class ComposerStaticInitab5a1c3e5dd87a60f271e1f2be3aaa51
     );
 
     public static $prefixDirsPsr4 = array (
+        'Slim\\Views\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/twig-view/src',
+        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -65,6 +70,13 @@ class ComposerStaticInitab5a1c3e5dd87a60f271e1f2be3aaa51
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
         'P' => 
         array (
             'Pimple' => 

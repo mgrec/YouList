@@ -1,15 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: maxime
- * Date: 16/12/2016
- * Time: 13:44
- */
+// Create app
+$app = new \Slim\App();
 
-// Create and configure Slim app
-$config = ['settings' => [
-    'addContentLengthHeader' => false,
-]];
-$app = new \Slim\App($config);
+// Get container
+$container = $app->getContainer();
 
-global $app;
+// Register component on container
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('View/', []);
+
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+
+    return $view;
+};
