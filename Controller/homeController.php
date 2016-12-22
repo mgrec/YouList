@@ -9,10 +9,7 @@
 namespace Controller;
 
 
-class indexController
+class homeController
 {
-    public function render($name){
-        echo "Hello " . $name;
-    }
     
 }

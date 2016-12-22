@@ -7,11 +7,10 @@
  */
 require 'vendor/autoload.php';
 require_once "config.php";
-use Controller\indexController;
+use Controller\homeController;
 
 $app->get('/', function ($request, $response, $args) {
-
-
+    
     return $this->view->render($response, 'pages/home.twig', []);
 })->setName('home');
 
