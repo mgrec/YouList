@@ -2,8 +2,34 @@
  * Created by maxime on 21/12/2016.
  */
 
-// requets get video list
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: 'M7lc1UVf-VE',
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+    event.target.stopVideo();
+}
+
+
 $(document).ready(function () {
+     id = [];
+    playlist = [];
+    countPlaylist = 0;
+    musicEtant = 1;
     $('#request-go').click( function () {
         $.ajax({
             url: 'https://www.googleapis.com/youtube/v3/search',
@@ -12,7 +38,7 @@ $(document).ready(function () {
             data: {
                 'key': 'AIzaSyDdKTz8gD-xnA5y1MpuzzF_U5D8eXCO02w',
                 'part': 'snippet',
-                'maxResults': 20,
+                'maxResults': 30,
                 'type': 'video' ,
                 'q': $('#request').val()
             },
@@ -26,11 +52,151 @@ $(document).ready(function () {
                     $.each(items, function (data, e) {
                        $('#list-result').append('<div class="music-item" id="item'+data+'">' +
                            '<img src="' + e.snippet.thumbnails.high.url + '" alt="">' +
-                           '</div>');
+                           '<h3 id="music-tiem-title' + e.id.videoId + '">'+ e.snippet.title + ' </h3>' +
+                           '<button id="' + e.id.videoId + '" class="button-playliste">Ajouter à la playlist</button>' +
+                           '</div>' +
+                           '<div id="AA' + e.id.videoId + '" class="hidden-title">' + e.snippet.title + '</div>');
+
+                        id.push("#music-tiem-title" + e.id.videoId);
                     })
                 }
+                $(id).each(function( i ) {
+                    var text = $(id[ i ]);
+                    text.text(text.text().substring(0,27) + ' ...')
+                });
             }
         });
-    })
+    });
+
 });
 
+
+$('#list-result').on('click', '.button-playliste', function () {
+    var idPlay = $(this).attr('id');
+    var id = '#AA'+idPlay;
+    title = $(id).text();
+    /*$('#track-bar-title').text(title);*/
+    $('.track-list-content').append('<p class="list-item-track" id="play' + idPlay +'" >' + title + '</p>');
+    playlist.push(idPlay);
+    console.log(playlist);
+});
+
+$('#play').click( function () {
+
+    if (musicEtant == 1) {
+        var id = '#play' + playlist[countPlaylist];
+        $(id).css('color', 'red');
+        $(id).css('font-weight', 'bold');
+        $('#track-bar-title').text($(id).text());
+        console.log(id);
+
+        player.loadVideoById({
+            'videoId': playlist[countPlaylist],
+            'suggestedQuality': 'large'
+        });
+
+        setInterval(function () {
+
+
+            if (player.getCurrentTime() >= player.getDuration() && player.getDuration() != 0){
+
+                countPlaylist = countPlaylist+1;
+
+                player.loadVideoById({
+                    'videoId': playlist[countPlaylist],
+                    'suggestedQuality': 'large'
+                });
+                player.playVideo();
+                var id = '#play' + playlist[countPlaylist];
+                $('.list-item-track').css('color', 'black');
+                $('.list-item-track').css('font-weight', '400');
+                $('#track-bar-title').text($(id).text());
+                $(id).css('color', 'red');
+                $(id).css('font-weight', 'bold');
+
+            }
+
+            currentValeur = player.getCurrentTime();
+            valMax = player.getDuration();
+
+            currentValeurReal = (player.getCurrentTime()*100) / valMax;
+
+            $('.progress-bar').css('width', currentValeurReal+'%').attr('aria-valuenow', currentValeurReal);
+        }, 100);
+
+        $(this).css('display', 'none');
+        $('#pause').css('display', 'block');
+    }else{
+        $(this).css('display', 'none');
+        $('#pause').css('display', 'block');
+        player.seekTo(player.getCurrentTime());
+        player.playVideo();
+        musicEtant = 1;
+    }
+
+});
+
+$('#pause').click( function () {
+    musicEtant = 0;
+    $('#play').css('display', 'block');
+    $(this).css('display', 'none');
+    player.pauseVideo();
+    console.log('pause at ' + player.getCurrentTime());
+});
+
+$('#back').click( function () {
+
+    console.log(countPlaylist);
+
+    if (countPlaylist > 0) {
+        countPlaylist = countPlaylist - 1;
+        $('.list-item-track').css('color', 'black');
+        $('.list-item-track').css('font-weight', '400');
+        var id = '#play' + playlist[countPlaylist];
+        $(id).css('color', 'red');
+        $(id).css('font-weight', 'bold');
+        console.log(id);
+        console.log(countPlaylist);
+        $('#track-bar-title').text($(id).text());
+
+        player.loadVideoById({
+            'videoId': playlist[countPlaylist],
+            'suggestedQuality': 'large'
+        });
+
+        $('#play').css('display', 'none');
+        $('#pause').css('display', 'block');
+    }else {
+        player.loadVideoById({
+            'videoId': playlist[countPlaylist],
+            'suggestedQuality': 'large'
+        });
+        $('#track-bar-title').text($(id).text());
+    }
+});
+
+$('#next').click( function () {
+
+    console.log(countPlaylist);
+
+    if (countPlaylist < playlist.length) {
+
+        countPlaylist = countPlaylist + 1;
+
+        $('.list-item-track').css('color', 'black');
+        $('.list-item-track').css('font-weight', '400');
+        var id = '#play' + playlist[countPlaylist];
+        $(id).css('color', 'red');
+        $(id).css('font-weight', 'bold');
+        console.log(id);
+        $('#track-bar-title').text($(id).text());
+
+        player.loadVideoById({
+            'videoId': playlist[countPlaylist],
+            'suggestedQuality': 'large'
+        });
+
+        $('#play').css('display', 'none');
+        $('#pause').css('display', 'block');
+    }
+});

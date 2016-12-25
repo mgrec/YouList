@@ -3,20 +3,69 @@
 
 <div class="content">
 
-    <fieldset>
-        <label for="request">Rechercher une musique</label>
-        <input id="request" name="request-video"  type="text">
-        <button id="request-go">Rechercher</button>
-    </fieldset>
+    <div class="search-content">
+        <div class="search-bar">
+            <input id="request" name="request-video" placeholder="Rechercher ..."  type="text">
+            <img id="request-go" src="../../Ressources/assets/img/search.png" alt="">
+        </div>
 
-    <div id="playlist">
+        <div class="list-result" id="list-result">
 
+        </div>
     </div>
 
-    <div id="list-result">
+    <div class="player-content">
+        <div id="player"></div>
+        <div class="track">
+            <div class="player-img">
+            <img id="youtube-icon" src="../../Ressources/assets/img/youtube-icon.png" alt="">
+            </div>
 
+            <div class="title-relat">
+                <div id="track-bar-title">No track.</div>
+            </div>
+
+            <div class="progress-bar-relat">
+                <div class="progress-bar-music">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                             aria-valuemin="0" aria-valuemax="100" {#style="width:0%"#}>
+                            <span class="sr-only">70% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-bar-relat">
+            <div class="track-bar">
+                <div class="element-track-bar">
+                    <img id="back" src="../../Ressources/assets/img/back.png" alt="">
+                </div>
+
+                <div class="element-track-bar">
+                    <img id="play" src="../../Ressources/assets/img/play-arrow.png" alt="">
+                </div>
+
+                <div class="element-track-bar">
+                    <img id="pause" src="../../Ressources/assets/img/pause-button.png" alt="">
+                </div>
+
+                <div class="element-track-bar">
+                    <img id="next" src="../../Ressources/assets/img/next.png" alt="">
+                </div>
+            </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+        <div class="track-list">
+            <div class="track-list-content">
+
+            </div>
+        </div>
     </div>
 
+
+    </div>
 
 </div>
 
