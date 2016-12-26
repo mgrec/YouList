@@ -106,6 +106,8 @@ $('#play').click( function () {
             setInterval(function () {
 
 
+                $('.progress-bar').css('width', 0 + '%').attr('aria-valuenow', 0);
+
                 if (player.getCurrentTime() >= player.getDuration() && player.getDuration() != 0) {
 
                     countPlaylist = countPlaylist + 1;
@@ -189,10 +191,10 @@ $('#next').click( function () {
 
     console.log('countPlaylist' + countPlaylist);
     console.log('countList' + countList);
-    countPlaylist = countPlaylist + 1;
+    /*countPlaylist = countPlaylist + 1;*/
     if (countPlaylist < playlist.length) {
 
-        /*countPlaylist = countPlaylist + 1;*/
+        countPlaylist = countPlaylist + 1;
 
         $('.list-item-track').css('color', 'black');
         $('.list-item-track').css('font-weight', '400');

@@ -10,7 +10,7 @@ require_once "config.php";
 use Controller\homeController;
 
 $app->get('/', function ($request, $response, $args) {
-    
+
     return $this->view->render($response, 'pages/home.twig', []);
 })->setName('home');
 
