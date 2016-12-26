@@ -230,3 +230,7 @@ html, body{
     text-align: center;
     padding-bottom: 20px;
 }
+
+.list-item-track{
+    cursor: pointer;
+}
