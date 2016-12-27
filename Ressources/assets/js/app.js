@@ -346,3 +346,34 @@ $('#back').on('mousedown', function() {
     $('#play').css('display', 'none');
     $('#pause').css('display', 'block');
 });
+
+
+setInterval(function () {
+
+    $.ajax({
+        url: 'http://localhost:8000/get-playlist',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'id_playlist': 3
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+                dataAjax = data;
+                playlistAjax = [];
+                $.each(dataAjax, function (item, i) {
+                    playlistAjax.push(i.idVid)
+                });
+                var deletion = $(playlist).not(playlistAjax).get();
+                var addition  = $(playlistAjax).not(playlist).get();
+                
+                if (deletion != '' || addition != ''){
+                    console.log('update');
+                }
+            }
+        }
+    });
+
+}, 1000);

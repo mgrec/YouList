@@ -12,6 +12,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        '/get-playlist',
+        '/add-playlist-item',
+        '/add-playlist'
     ];
 }

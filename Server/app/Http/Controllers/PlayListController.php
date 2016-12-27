@@ -12,6 +12,7 @@ class PlayListController extends Controller
     public function __construct(PlayList $playlist)
     {
         $this->playlist = $playlist;
+        header("Access-Control-Allow-Origin: *");
     }
     
     public function addPlayList(Request $request)
@@ -19,11 +20,18 @@ class PlayListController extends Controller
         $datas = $request->datas;
         $this->playlist->AddPlayList($datas);
     }
+
+    public function addPlayListItem(Request $request)
+    {
+        $datas = $request->datas;
+        $this->playlist->AddPlayListItem($datas);
+    }
     
     public function returnPlayList(Request $request)
     {
-        $datas = $request->datas;
-        $playListDatas = $this->playlist->ReturnPlayList($datas);
+        $datas['id_playlist'] = $request->id_playlist;
+        
+        $playListDatas = $this->playlist->ReturnPlayListItem($datas);
         
         echo $playListDatas;
     }

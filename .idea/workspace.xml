@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ec2aa6ac-e153-45d4-87a7-816b88bd5f78" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressources/assets/css/master.css" afterPath="$PROJECT_DIR$/Ressources/assets/css/master.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressources/assets/js/app.js" afterPath="$PROJECT_DIR$/Ressources/assets/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/pages/home.twig" afterPath="$PROJECT_DIR$/View/pages/home.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" afterPath="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/PlayList.php" afterPath="$PROJECT_DIR$/Server/app/PlayList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/web.php" afterPath="$PROJECT_DIR$/Server/routes/web.php" />
     </list>
     <ignored path="SelimFMWK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,34 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/pages/home.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ressources/assets/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1767">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="48">
+              <caret line="357" column="28" selection-start-line="357" selection-start-column="28" selection-end-line="357" selection-end-column="28" />
               <folding>
-                <marker date="1482765387000" expanded="true" signature="1631:1721" placeholder="..." />
-                <marker date="1482765387000" expanded="true" signature="1631:1989" placeholder="..." />
+                <marker date="1482846000000" expanded="true" signature="1631:1721" placeholder="..." />
+                <marker date="1482846000000" expanded="true" signature="1631:1989" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -65,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="17" column="60" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="60" />
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -74,8 +55,8 @@
       <file leaf-file-name="PlayListController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="318">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -83,24 +64,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/app/User.php">
+      <file leaf-file-name="PlayList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayList.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="154">
+              <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,14 +121,15 @@
         <option value="$PROJECT_DIR$/View/blocks/footer.twig" />
         <option value="$PROJECT_DIR$/Ressources/assets/css/reset.css" />
         <option value="$PROJECT_DIR$/View/blocks/header.twig" />
-        <option value="$PROJECT_DIR$/Ressources/assets/js/app.js" />
         <option value="$PROJECT_DIR$/Ressources/assets/css/master.css" />
         <option value="$PROJECT_DIR$/View/pages/home.twig" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Server/.env" />
         <option value="$PROJECT_DIR$/Server/routes/web.php" />
         <option value="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" />
+        <option value="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/Server/app/PlayList.php" />
+        <option value="$PROJECT_DIR$/Ressources/assets/js/app.js" />
       </list>
     </option>
   </component>
@@ -145,6 +137,9 @@
   <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -270,6 +265,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Middleware" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouList" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -351,6 +372,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ec2aa6ac-e153-45d4-87a7-816b88bd5f78" name="Default" comment="" />
@@ -360,12 +384,12 @@
       <updated>1481891919749</updated>
       <workItem from="1481891921031" duration="2355000" />
       <workItem from="1482338823085" duration="1307000" />
-      <workItem from="1482419514852" duration="42345000" />
+      <workItem from="1482419514852" duration="47545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46007000" />
+    <option name="totallyTimeSpent" value="51207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -409,6 +433,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -438,8 +470,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1482765387000" expanded="true" signature="1631:1721" placeholder="..." />
-            <marker date="1482765387000" expanded="true" signature="1631:1989" placeholder="..." />
+            <marker date="1482846000000" expanded="true" signature="1631:1721" placeholder="..." />
+            <marker date="1482846000000" expanded="true" signature="1631:1989" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -552,10 +584,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/pages/home.twig">
+    <entry file="file://$PROJECT_DIR$/Server/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -568,21 +608,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/.env">
+    <entry file="file://$PROJECT_DIR$/View/pages/home.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="273">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ressources/assets/js/app.js">
+    <entry file="file://$PROJECT_DIR$/Server/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1767">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="154">
+          <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
-            <marker date="1482765387000" expanded="true" signature="1631:1721" placeholder="..." />
-            <marker date="1482765387000" expanded="true" signature="1631:1989" placeholder="..." />
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -590,35 +655,18 @@
     <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="60" />
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
+    <entry file="file://$PROJECT_DIR$/Ressources/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="48">
+          <caret line="357" column="28" selection-start-line="357" selection-start-column="28" selection-end-line="357" selection-end-column="28" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
+            <marker date="1482846000000" expanded="true" signature="1631:1721" placeholder="..." />
+            <marker date="1482846000000" expanded="true" signature="1631:1989" placeholder="..." />
           </folding>
         </state>
       </provider>

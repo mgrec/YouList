@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('/add-playlist', 'PlayListController@addPlayList')->name('addPlayList');
+Route::post('/add-playlist-item', 'PlayListController@addPlayListItem')->name('addPlayListItem');
+Route::post('/get-playlist', 'PlayListController@returnPlayList')->name('returnPlayList');
