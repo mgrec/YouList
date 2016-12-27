@@ -30,7 +30,7 @@ class PlayList extends Model
         DB::table('playList')
             ->insert([
                 [
-                    'data' => date("m.d.y"),
+                    'date' => date("m.d.y"),
                     'user_id' => /*$UserID*/ 1
                 ]
             ]);
@@ -42,7 +42,8 @@ class PlayList extends Model
             ->insert([
                 [
                     'id_playlist' => $datas['id_playlist'],
-                    'idVid' => $datas['idVid']
+                    'idVid' => $datas['idVid'],
+                    'title' => $datas['title']
                 ]
             ]);
     }
@@ -50,7 +51,7 @@ class PlayList extends Model
     public function ReturnPlayListItem($datas)
     {
         $playList = DB::table('playListItem')
-            ->select('idVid')
+            ->select('idVid', 'title')
             ->where('id_playlist', $datas['id_playlist'])
             ->get();
 

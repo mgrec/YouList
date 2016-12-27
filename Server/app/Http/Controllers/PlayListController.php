@@ -17,13 +17,18 @@ class PlayListController extends Controller
     
     public function addPlayList(Request $request)
     {
-        $datas = $request->datas;
+        $datas['id_playlist'] = $request->id_playlist;
+        $datas['idVid'] = $request->idVid;
+        $datas['title'] = $request->title;
         $this->playlist->AddPlayList($datas);
     }
 
     public function addPlayListItem(Request $request)
     {
         $datas = $request->datas;
+        $datas['id_playlist'] = $request->id_playlist;
+        $datas['idVid'] = $request->idVid;
+        $datas['title'] = $request->title;
         $this->playlist->AddPlayListItem($datas);
     }
     
