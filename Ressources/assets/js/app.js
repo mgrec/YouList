@@ -343,7 +343,7 @@ $('#next').on('mousedown', function () {
     interval = setInterval(function () {
         speed();
     }, 100);
-}).on('mouseup mouseleave', function () {
+}).on('mouseup', function () {
     clearInterval(interval);
     player.seekTo(player.getCurrentTime());
     player.playVideo();
@@ -355,7 +355,7 @@ $('#back').on('mousedown', function () {
     interval2 = setInterval(function () {
         speedback();
     }, 100);
-}).on('mouseup mouseleave', function () {
+}).on('mouseup', function () {
     clearInterval(interval2);
     player.seekTo(player.getCurrentTime());
     player.playVideo();
