@@ -129,7 +129,7 @@ $('#list-result').on('click', '.button-playliste', function () {
         type: "POST",
         dataType: 'JSON',
         data: {
-            'id_playlist': 3,
+            'id_playlist': $('#idlist').text(),
             'idVid': idPlay,
             'title': title
         },
@@ -371,7 +371,7 @@ setInterval(function () {
         type: "POST",
         dataType: 'JSON',
         data: {
-            'id_playlist': 3
+            'id_playlist': $('#idlist').text()
         },
         success: function (data) {
             if (data.status == "error") {

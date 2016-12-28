@@ -1,0 +1,97 @@
+{% include "blocks/header.twig" %}
+
+<div class="header-wall">
+
+</div>
+
+<div class="content-wall">
+
+    <div class="content-playlist">
+        <div class="add-playlist">
+            <input type="text" id="add-playlist-input" class="add-playlist-input">
+        </div>
+        <div class="list-playlist">
+            <ul class="ul-list">
+                {#<li>
+                    <h2>MA PLAYLIST <a href=" {{ path_for("playlist", {'iduser' : 1, 'idlist' : 3 } ) }} "> -> </a></h2>
+                </li>#}
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+{% include "blocks/footer.twig" %}
+
+<script>
+    $('#add-playlist-input').keypress(function (e) {
+        if (e.which == 13) {
+            $.ajax({
+                url: 'http://localhost:8000/add-playlist',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'name': $(this).val(),
+                    'user_id': 1
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+                    }
+                }
+            });
+            console.log('test');
+            /*$('.ul-list').empty();*/
+            $.ajax({
+                url: 'http://localhost:8000/get-list-playlist',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'name': '{{ username }}'
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+                        var size = $('ul').children().length;
+                        var count = 0;
+                        $.each(data, function (i, item) {
+                            if (count >= size){
+                                $('.ul-list').append('<li> ' +
+                                        '<h2>' + item.name +
+                                        '<a href="/playlist/' + item.user_id + '-' + item.id + '"> Play</a>' +
+                                        '</li>' +
+                                        ' </h2>')
+                            }
+                            count +=1;
+                        });
+                    }
+                }
+            });
+            $('#add-playlist-input').val('');
+        }
+    });
+
+    $.ajax({
+        url: 'http://localhost:8000/get-list-playlist',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'name': '{{ username }}'
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+                $.each(data, function (i, item) {
+                    $('.ul-list').append('<li> ' +
+                            '<h2>' + item.name +
+                            '<a href="/playlist/' + item.user_id + '-' + item.id + '"> Play</a>' +
+                            '</li>' +
+                            ' </h2>')
+                });
+            }
+        }
+    });
+</script>

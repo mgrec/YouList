@@ -14,12 +14,19 @@ class PlayListController extends Controller
         $this->playlist = $playlist;
         header("Access-Control-Allow-Origin: *");
     }
+
+    public function getAllPlayList(Request $request)
+    {
+        $datas['name'] = $request->name;
+        $playlist = $this->playlist->getAllPlayList($datas);
+        
+        echo $playlist;
+    }
     
     public function addPlayList(Request $request)
     {
-        $datas['id_playlist'] = $request->id_playlist;
-        $datas['idVid'] = $request->idVid;
-        $datas['title'] = $request->title;
+        $datas['name'] = $request->name;
+        $datas['user_id'] = $request->user_id;
         $this->playlist->AddPlayList($datas);
     }
 
@@ -35,7 +42,6 @@ class PlayListController extends Controller
     public function returnPlayList(Request $request)
     {
         $datas['id_playlist'] = $request->id_playlist;
-        
         $playListDatas = $this->playlist->ReturnPlayListItem($datas);
         
         echo $playListDatas;
