@@ -4,15 +4,50 @@
 
 </div>
 
-<div class="playlist-content">
-    <div class="add-playlist">
-        <input type="text">
+<div class="content-wall">
+
+    <div class="content-playlist">
+        <div class="add-playlist">
+            Je m'inscris :
+            <input type="text" id="add-username-input" class="add-username-input">
+        </div>
+
+        <div class="add-playlist">
+            j'ai déjà mon identifiant :
+            <input type="text" id="add-go-input" class="add-username-input">
+        </div>
     </div>
-    <div class="list-playlist">
-        <ul>
-            <li></li>
-        </ul>
-    </div>
+
 </div>
 
 {% include "blocks/footer.twig" %}
+
+<script>
+    $('#add-username-input').keypress(function (e) {
+        if (e.which == 13) {
+            $.ajax({
+                url: 'http://localhost:8000/add-user',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'name': $(this).val()
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+
+                    }
+                }
+            });
+            window.location.replace('/wall/' + $(this).val());
+        }
+    });
+
+    $('#add-go-input').keypress(function (e) {
+        if (e.which == 13) {
+            window.location.replace('/wall/' + $(this).val());
+        }
+    });
+
+</script>

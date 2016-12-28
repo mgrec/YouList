@@ -15,6 +15,12 @@ class PlayListController extends Controller
         header("Access-Control-Allow-Origin: *");
     }
 
+    public function addUser(Request $request)
+    {
+        $datas['name'] = $request->name;
+        $this->playlist->AddUser($datas);
+    }
+    
     public function getAllPlayList(Request $request)
     {
         $datas['name'] = $request->name;
@@ -26,7 +32,7 @@ class PlayListController extends Controller
     public function addPlayList(Request $request)
     {
         $datas['name'] = $request->name;
-        $datas['user_id'] = $request->user_id;
+        $datas['name_user'] = $request->name_user;
         $this->playlist->AddPlayList($datas);
     }
 

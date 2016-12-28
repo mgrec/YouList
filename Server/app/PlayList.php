@@ -18,14 +18,24 @@ class PlayList extends Model
             ->select('id')
             ->where('name', $datas)
             ->get();
-
         return $UserID;
     }
-    
+
+    public function AddUser($datas)
+    {
+        DB::table('users')
+            ->insert([
+                [
+                    'name' => $datas['name']
+                ]
+            ]);
+    }
+
     public function getAllPlayList($datas)
     {
-
+        
         $UserID = $this->UserID($datas['name']);
+
         $playList = DB::table('playList')
             ->select('*')
             ->where('user_id', $UserID[0]->id)
@@ -39,11 +49,13 @@ class PlayList extends Model
     public function AddPlayList($datas)
     {
         $IDU = uniqid();
+        $UserID = $this->UserID($datas['name_user']);
+
         DB::table('playList')
             ->insert([
                 [
                     'name' => $datas['name'],
-                    'user_id' => $datas['user_id'],
+                    'user_id' => $UserID[0]->id,
                     'IDU' => $IDU
                 ]
             ]);

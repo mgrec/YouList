@@ -19,3 +19,4 @@ Route::post('/get-list-playlist', 'PlayListController@getAllPlayList')->name('ge
 Route::post('/add-playlist', 'PlayListController@addPlayList')->name('addPlayList');
 Route::post('/add-playlist-item', 'PlayListController@addPlayListItem')->name('addPlayListItem');
 Route::post('/get-playlist', 'PlayListController@returnPlayList')->name('returnPlayList');
+Route::post('/add-user', 'PlayListController@addUser')->name('addUser');

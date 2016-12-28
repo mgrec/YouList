@@ -3,7 +3,6 @@
 <div class="header-wall">
 
 </div>
-
 <div class="content-wall">
 
     <div class="content-playlist">
@@ -32,7 +31,7 @@
                 dataType: 'JSON',
                 data: {
                     'name': $(this).val(),
-                    'user_id': 1
+                    'name_user' : '{{ username }}'
                 },
                 success: function (data) {
                     if (data.status == "error") {
@@ -41,8 +40,6 @@
                     }
                 }
             });
-            console.log('test');
-            /*$('.ul-list').empty();*/
             $.ajax({
                 url: 'http://localhost:8000/get-list-playlist',
                 type: "POST",
@@ -63,6 +60,7 @@
                                         '<a href="/playlist/' + item.user_id + '-' + item.id + '"> Play</a>' +
                                         '</li>' +
                                         ' </h2>')
+                                console.log(item.name);
                             }
                             count +=1;
                         });
@@ -90,6 +88,7 @@
                             '<a href="/playlist/' + item.user_id + '-' + item.id + '"> Play</a>' +
                             '</li>' +
                             ' </h2>')
+                    console.log(item.name);
                 });
             }
         }
