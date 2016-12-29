@@ -15,8 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/get-list-playlist', 'PlayListController@getAllPlayList')->name('getAllPlayList');
-Route::post('/add-playlist', 'PlayListController@addPlayList')->name('addPlayList');
-Route::post('/add-playlist-item', 'PlayListController@addPlayListItem')->name('addPlayListItem');
-Route::post('/get-playlist', 'PlayListController@returnPlayList')->name('returnPlayList');
-Route::post('/add-user', 'PlayListController@addUser')->name('addUser');
+Route::group(['middleware' => 'cors'], function () {
+    Route::post('/get-list-playlist', 'PlayListController@getAllPlayList')->name('getAllPlayList');
+    Route::post('/add-playlist', 'PlayListController@addPlayList')->name('addPlayList');
+    Route::post('/add-playlist-item', 'PlayListController@addPlayListItem')->name('addPlayListItem');
+    Route::post('/get-playlist', 'PlayListController@returnPlayList')->name('returnPlayList');
+    Route::post('/add-user', 'PlayListController@addUser')->name('addUser');
+    Route::post('/connect-playlist', 'PlayListController@connectPlayList')->name('connectPlayList');
+    Route::post('/get-playlist-status', 'PlayListController@getStatusPlayList')->name('getStatusPlayList');
+    Route::post('/change-playlist-status', 'PlayListController@changeStatusPlayList')->name('changeStatusPlayList');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

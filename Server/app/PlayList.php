@@ -21,6 +21,31 @@ class PlayList extends Model
         return $UserID;
     }
 
+    public function ConnectPlayList($datas)
+    {
+        $PlayListID = DB::table('playList')
+            ->select('id')
+            ->where('IDU', $datas['IDU'])
+            ->first();
+        
+        $AllItems = DB::table('playListItem')
+            ->select('*')
+            ->where('id_playlist', $PlayListID->id)
+            ->get();
+        
+        return $AllItems;
+    }
+    
+    public function GetStatusPlayList($datas)
+    {
+        $status = DB::table('playList')
+            ->select('status')
+            ->where('id', $datas['id_playlist'])
+            ->first();
+        
+        return $status;
+    }
+
     public function AddUser($datas)
     {
         DB::table('users')

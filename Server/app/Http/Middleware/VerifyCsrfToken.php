@@ -16,7 +16,9 @@ class VerifyCsrfToken extends BaseVerifier
         '/add-playlist-item',
         '/add-playlist',
         '/get-list-playlist',
-        '/add-user'
-
+        '/add-user',
+        '/connect-playlist',
+        '/get-playlist-status',
+        '/change-playlist-status'
     ];
 }

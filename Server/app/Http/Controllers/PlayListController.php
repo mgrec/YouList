@@ -5,14 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PlayList;
 
+
+//sudo php artisan serve --host 192.168.0.18 --port 80
+
 class PlayListController extends Controller
 {
     protected $playlist;
     
+    
     public function __construct(PlayList $playlist)
     {
         $this->playlist = $playlist;
-        header("Access-Control-Allow-Origin: *");
+    }
+
+    public function getStatusPlayList(Request $request)
+    {
+        $datas['id_playlist'] = $request->id_playlist;
+        $status = $this->playlist->GetStatusPlayList($datas);
+        echo $status->status;
+    }
+
+    public function connectPlayList(Request $request)
+    {
+        $datas['IDU'] = $request->IDU;
+        $playlist = $this->playlist->ConnectPlayList($datas);
+        echo $playlist;
+    }
+
+    public function changeStatusPlayList(Request $request)
+    {
+        
     }
 
     public function addUser(Request $request)

@@ -140,7 +140,8 @@ $('#list-result').on('click', '.button-playliste', function () {
 
             }
 
-} });
+        }
+    });
 });
 
 $('#play').click(function () {
@@ -363,6 +364,41 @@ $('#back').on('mousedown', function () {
     $('#pause').css('display', 'block');
 });
 
+setInterval(function () {
+    $.ajax({
+        url: 'http://localhost:8000/get-playlist-status',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'id_playlist': $('#idlist').text()
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+                if (data == 0){
+                    if (musicEtant == 1){
+
+                    }else{
+                        $('#play').css('display', 'none');
+                        $('#pause').css('display', 'block');
+                        player.seekTo(player.getCurrentTime());
+                        player.playVideo();
+                        musicEtant = 1;
+                    }
+
+                }else if(data == 1){
+                    musicEtant = 0;
+                    $('#play').css('display', 'block');
+                    $('#pause').css('display', 'none');
+                    player.pauseVideo();
+                    console.log('pause at ' + player.getCurrentTime());
+                }
+            }
+        }
+    });
+}, 1200);
+
 
 setInterval(function () {
 
@@ -389,12 +425,12 @@ setInterval(function () {
                 var addition = playlist.length - playlistAjax.length;
                 console.log(addition);
                 /*if (deletion != '') {
-                    for (j = 0; j < deletion.length; j++) {
-                        playlist = jQuery.grep(playlist, function (value) {
-                            return value != deletion[j];
-                        });
-                    }
-                }*/
+                 for (j = 0; j < deletion.length; j++) {
+                 playlist = jQuery.grep(playlist, function (value) {
+                 return value != deletion[j];
+                 });
+                 }
+                 }*/
                 if (addition < 0) {
                     if (playlist.length == 0) {
                         for (i = 0; i < playlistAjax.length; i++) {
@@ -403,7 +439,7 @@ setInterval(function () {
                             $('.track-list-content').append('<p class="list-item-track" id="play' + countList + idPlay + '" >' + playlistAjaxTitle[i] + '</p>');
                             countList = countList + 1;
                         }
-                    }else{
+                    } else {
                         for (i = playlist.length; i < playlistAjax.length; i++) {
                             playlist.push(playlistAjax[i]);
                             var idPlay = playlistAjax[i];
