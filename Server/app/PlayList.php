@@ -46,6 +46,16 @@ class PlayList extends Model
         return $status;
     }
 
+    public function UpdateStatusPlayList($datas)
+{
+    DB::table('playList')
+        ->select('status')
+        ->where('id', $datas['id_playlist'])
+        ->update([
+            'status' => $datas['status'],
+        ]);
+}
+
     public function AddUser($datas)
     {
         DB::table('users')
@@ -81,6 +91,7 @@ class PlayList extends Model
                 [
                     'name' => $datas['name'],
                     'user_id' => $UserID[0]->id,
+                    'status' => 0,
                     'IDU' => $IDU
                 ]
             ]);
