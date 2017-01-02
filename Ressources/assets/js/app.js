@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'M7lc1UVf-VE',
+        videoId: /*'M7lc1UVf-VE'*/ playlist[countPlaylist],
         events: {
             'onReady': onPlayerReady
         }
@@ -146,7 +146,6 @@ $('#list-result').on('click', '.button-playliste', function () {
 
 $('#play').click(function () {
     if (playlist.length != 0) {
-
         console.log('countPlaylist' + countPlaylist);
         console.log('countList' + countList);
 
@@ -201,6 +200,23 @@ $('#play').click(function () {
             player.playVideo();
             musicEtant = 1;
         }
+
+        $.ajax({
+            url: 'http://localhost:8000/change-playlist-status',
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+                'id_playlist': $('#idlist').text(),
+                'status': musicEtant
+            },
+            success: function (data) {
+                if (data.status == "error") {
+                    alert('votre naviagteur ne supporte pas l\'AJAX')
+                } else {
+
+                }
+            }
+        });
     }
 
 });
@@ -211,6 +227,23 @@ $('#pause').click(function () {
     $(this).css('display', 'none');
     player.pauseVideo();
     console.log('pause at ' + player.getCurrentTime());
+
+    $.ajax({
+        url: 'http://localhost:8000/change-playlist-status',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'id_playlist': $('#idlist').text(),
+            'status': musicEtant
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+
+            }
+        }
+    });
 });
 
 $('#back').click(function () {
@@ -376,7 +409,7 @@ setInterval(function () {
             if (data.status == "error") {
                 alert('votre naviagteur ne supporte pas l\'AJAX')
             } else {
-                if (data == 0){
+                if (data == 1){
                     if (musicEtant == 1){
 
                     }else{
@@ -387,7 +420,7 @@ setInterval(function () {
                         musicEtant = 1;
                     }
 
-                }else if(data == 1){
+                }else if(data == 0){
                     musicEtant = 0;
                     $('#play').css('display', 'block');
                     $('#pause').css('display', 'none');

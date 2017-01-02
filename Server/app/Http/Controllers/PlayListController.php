@@ -34,7 +34,9 @@ class PlayListController extends Controller
 
     public function changeStatusPlayList(Request $request)
     {
-        
+        $datas['status'] = $request->status;
+        $datas['id_playlist'] = $request->id_playlist;
+        $this->playlist->UpdateStatusPlayList($datas);
     }
 
     public function addUser(Request $request)
