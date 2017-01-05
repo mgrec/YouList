@@ -22,6 +22,7 @@ class PlayListController extends Controller
     {
         $datas['id_playlist'] = $request->id_playlist;
         $status = $this->playlist->GetStatusPlayList($datas);
+        
         echo $status->status;
     }
 
@@ -29,6 +30,7 @@ class PlayListController extends Controller
     {
         $datas['IDU'] = $request->IDU;
         $playlist = $this->playlist->ConnectPlayList($datas);
+
         echo $playlist;
     }
 

@@ -32,6 +32,7 @@ $(document).ready(function () {
     musicEtant = 1;
     countList = 0;
     speedOrpass = 0;
+    
 
     $('#request-go').click(function () {
         $.ajax({
