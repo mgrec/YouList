@@ -51,7 +51,6 @@ $(document).ready(function () {
                     alert('votre naviagteur ne supporte pas l\'AJAX')
                 } else {
                     $('#list-result').empty();
-                    console.log(data);
                     var items = data.items;
                     $.each(items, function (data, e) {
                         $('#list-result').append('<div class="music-item" id="item' + data + '">' +
@@ -90,7 +89,6 @@ $(document).ready(function () {
                         alert('votre naviagteur ne supporte pas l\'AJAX')
                     } else {
                         $('#list-result').empty();
-                        console.log(data);
                         var items = data.items;
                         $.each(items, function (data, e) {
                             $('#list-result').append('<div class="music-item" id="item' + data + '">' +
@@ -116,14 +114,12 @@ $(document).ready(function () {
 
 
 $('#list-result').on('click', '.button-playliste', function () {
-    console.log(countList);
     var idPlay = $(this).attr('id');
     var id = '#AA' + idPlay;
     title = $(id).text();
     $('.track-list-content').append('<p class="list-item-track" id="play' + countList + idPlay + '" >' + title + '</p>');
     playlist.push(idPlay);
     countList = countList + 1;
-    console.log(playlist);
 
     $.ajax({
         url: 'http://localhost:8000/add-playlist-item',
@@ -146,16 +142,14 @@ $('#list-result').on('click', '.button-playliste', function () {
 });
 
 $('#play').click(function () {
+    
     if (playlist.length != 0) {
-        console.log('countPlaylist' + countPlaylist);
-        console.log('countList' + countList);
-
-        if (musicEtant == 1) {
+        
+        if (musicEtant == 0 || countPlaylist == 0) {
             var id = '#play' + countPlaylist + playlist[countPlaylist];
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
             $('#track-bar-title').text($(id).text());
-            console.log(id);
 
             player.loadVideoById({
                 'videoId': playlist[countPlaylist],
@@ -194,6 +188,7 @@ $('#play').click(function () {
 
             $(this).css('display', 'none');
             $('#pause').css('display', 'block');
+            musicEtant = 1;
         } else {
             $(this).css('display', 'none');
             $('#pause').css('display', 'block');
@@ -227,7 +222,6 @@ $('#pause').click(function () {
     $('#play').css('display', 'block');
     $(this).css('display', 'none');
     player.pauseVideo();
-    console.log('pause at ' + player.getCurrentTime());
 
     $.ajax({
         url: 'http://localhost:8000/change-playlist-status',
@@ -248,10 +242,6 @@ $('#pause').click(function () {
 });
 
 $('#back').click(function () {
-
-    console.log('countPlaylist' + countPlaylist);
-    console.log('countList' + countList);
-
     if (speedOrpass != 1) {
 
         if (countPlaylist > 0) {
@@ -261,8 +251,6 @@ $('#back').click(function () {
             var id = '#play' + countPlaylist + playlist[countPlaylist];
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
-            console.log(id);
-            console.log(countPlaylist);
             $('#track-bar-title').text($(id).text());
 
             player.loadVideoById({
@@ -297,7 +285,6 @@ $('#next').click(function () {
             var id = '#play' + countPlaylist + playlist[countPlaylist];
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
-            console.log(id);
             $('#track-bar-title').text($(id).text());
 
             player.loadVideoById({
@@ -426,7 +413,6 @@ setInterval(function () {
                     $('#play').css('display', 'block');
                     $('#pause').css('display', 'none');
                     player.pauseVideo();
-                    console.log('pause at ' + player.getCurrentTime());
                 }
             }
         }
@@ -457,7 +443,6 @@ setInterval(function () {
                 var deletion = $(playlist).not(playlistAjax).get();
                 /*var addition = $(playlistAjax).not(playlist).get();*/
                 var addition = playlist.length - playlistAjax.length;
-                console.log(addition);
                 /*if (deletion != '') {
                  for (j = 0; j < deletion.length; j++) {
                  playlist = jQuery.grep(playlist, function (value) {
