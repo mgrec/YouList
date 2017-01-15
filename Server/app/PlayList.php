@@ -21,6 +21,16 @@ class PlayList extends Model
         return $UserID;
     }
 
+    public function GetCurrentIdVid($datas)
+    {
+        $CurrentID = DB::table('playList')
+            ->select('last_idVid')
+            ->where('IDU', $datas['IDU'])
+            ->first();
+        
+        return $CurrentID;
+    }
+
     public function ConnectPlayList($datas)
     {
         $PlayListID = DB::table('playList')
@@ -44,6 +54,16 @@ class PlayList extends Model
             ->first();
         
         return $status;
+    }
+
+    public function GetShareCode($datas)
+    {
+        $code = DB::table('playList')
+            ->select('IDU')
+            ->where('id', $datas['id_playlist'])
+            ->first();
+
+        return $code;
     }
 
     public function UpdateStatusPlayList($datas)

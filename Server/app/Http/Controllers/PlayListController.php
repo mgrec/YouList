@@ -26,6 +26,14 @@ class PlayListController extends Controller
         echo $status->status;
     }
 
+    public function getShareCode(Request $request)
+    {
+        $datas['id_playlist'] = $request->id_playlist;
+        $code = $this->playlist->GetShareCode($datas);
+
+        echo $code->IDU;
+    }
+    
     public function connectPlayList(Request $request)
     {
         $datas['IDU'] = $request->IDU;
@@ -33,7 +41,15 @@ class PlayListController extends Controller
 
         echo $playlist;
     }
+    
+    public function getCurrentIdVid(Request $request)
+    {
+        $datas['IDU'] = $request->IDU;
+        $currentID = $this->playlist->GetCurrentIdVid($datas);
 
+        echo $currentID->last_idVid;
+    }
+    
     public function changeStatusPlayList(Request $request)
     {
         $datas['status'] = $request->status;

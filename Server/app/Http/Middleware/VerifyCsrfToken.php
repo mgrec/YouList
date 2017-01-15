@@ -19,6 +19,8 @@ class VerifyCsrfToken extends BaseVerifier
         '/add-user',
         '/connect-playlist',
         '/get-playlist-status',
-        '/change-playlist-status'
+        '/change-playlist-status',
+        '/get-share-code',
+        '/get-current-idVid'
     ];
 }

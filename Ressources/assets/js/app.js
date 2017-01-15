@@ -7,6 +7,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
+timeGet = 5000;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '360',
@@ -32,7 +33,15 @@ $(document).ready(function () {
     musicEtant = 1;
     countList = 0;
     speedOrpass = 0;
-    
+    intervalCode = null;
+
+    $('#share-go').click(function () {
+        clearInterval(intervalCode)
+       $('.share-code').fadeIn().css('display', 'block');
+        intervalCode = setInterval(function () {
+            $('.share-code').fadeOut();
+        }, 5000);
+    });
 
     $('#request-go').click(function () {
         $.ajax({
@@ -145,7 +154,7 @@ $('#play').click(function () {
     
     if (playlist.length != 0) {
         
-        if (musicEtant == 0 || countPlaylist == 0) {
+        if (countPlaylist == 0) {
             var id = '#play' + countPlaylist + playlist[countPlaylist];
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
@@ -162,6 +171,8 @@ $('#play').click(function () {
                 $('.progress-bar').css('width', 0 + '%').attr('aria-valuenow', 0);
 
                 if (player.getCurrentTime() >= player.getDuration() && player.getDuration() != 0) {
+                    console.log('Numéro de la musique : ' + countPlaylist);
+                    console.log('ID de la music : ' + '#play' + countPlaylist + playlist[countPlaylist] )
 
                     countPlaylist = countPlaylist + 1;
 
@@ -322,7 +333,7 @@ $('.track-list-content ').on('click', 'p', function () {
 
         if (player.getCurrentTime() >= player.getDuration() && player.getDuration() != 0) {
 
-            countPlaylist = countPlaylist + 1;
+            /*countPlaylist = countPlaylist + 1;*/
 
             player.loadVideoById({
                 'videoId': playlist[countPlaylist],
@@ -361,6 +372,7 @@ function speedback() {
     speedOrpass = 1;
 }
 
+/*
 $('#next').on('mousedown', function () {
     interval = setInterval(function () {
         speed();
@@ -384,6 +396,7 @@ $('#back').on('mousedown', function () {
     $('#play').css('display', 'none');
     $('#pause').css('display', 'block');
 });
+*/
 
 setInterval(function () {
     $.ajax({
@@ -407,7 +420,6 @@ setInterval(function () {
                         player.playVideo();
                         musicEtant = 1;
                     }
-
                 }else if(data == 0){
                     musicEtant = 0;
                     $('#play').css('display', 'block');
@@ -471,5 +483,19 @@ setInterval(function () {
             }
         }
     });
+}, timeGet);
 
-}, 1000);
+$.ajax({
+    url: 'http://localhost:8000/get-share-code',
+    type: "POST",
+    data: {
+        'id_playlist': $('#idlist').text()
+    },
+    success: function (data) {
+        if (data.status == "error") {
+            alert('votre naviagteur ne supporte pas l\'AJAX')
+        } else {
+            $('.code-content').text('Your share code : ' + data);
+        }
+    }
+});

@@ -27,4 +27,3 @@ $app->get('/playlist/{iduser}-{idlist}', function ($request, $response, $args) {
 })->setName('playlist');
 
 $app->run();
-

@@ -46,6 +46,28 @@ button, input:focus {outline:0;}
     cursor: pointer;
 }
 
+.share-img{
+    left: 67%!important;
+}
+
+.share-code {
+    width: 230px;
+    position: absolute;
+    left: 48%;
+    top: 5px;
+    background-color: #E62117;
+    border-radius: 2px;
+    padding-left: 4px;
+    display: none;
+}
+
+.share-code p{
+    color: white;
+    height: 20px;
+    line-height: 28px;
+    padding-left: 4px;
+}
+
 .list-result{
     position: fixed;
     width: 70%;
