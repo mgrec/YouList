@@ -21,6 +21,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/get-playlist-status',
         '/change-playlist-status',
         '/get-share-code',
-        '/get-current-idVid'
+        '/get-current-idVid',
+        '/change-current-idVid'
     ];
 }

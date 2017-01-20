@@ -20,7 +20,9 @@ class PlayListController extends Controller
 
     public function getStatusPlayList(Request $request)
     {
+        $datas = [];
         $datas['id_playlist'] = $request->id_playlist;
+        $datas['IDU'] = $request->IDU;
         $status = $this->playlist->GetStatusPlayList($datas);
         
         echo $status->status;
@@ -48,6 +50,14 @@ class PlayListController extends Controller
         $currentID = $this->playlist->GetCurrentIdVid($datas);
 
         echo $currentID->last_idVid;
+    }
+
+    public function changeCurrentIdVid(Request $request)
+    {
+        $datas = [];
+        $datas['id_playlist'] = $request->id_playlist;
+        $datas['idVid'] = $request->idVid;
+        $this->playlist->ChangeCurrentIdVid($datas);
     }
     
     public function changeStatusPlayList(Request $request)

@@ -18,6 +18,7 @@ class PlayList extends Model
             ->select('id')
             ->where('name', $datas)
             ->get();
+
         return $UserID;
     }
 
@@ -29,6 +30,16 @@ class PlayList extends Model
             ->first();
         
         return $CurrentID;
+    }
+
+    public function ChangeCurrentIdVid(array $datas)
+    {
+        DB::table('playList')
+            ->where('id', $datas['id_playlist'])
+            ->update([
+                'last_idVid' => $datas['idVid'],
+            ]);
+
     }
 
     public function ConnectPlayList($datas)
@@ -46,12 +57,19 @@ class PlayList extends Model
         return $AllItems;
     }
     
-    public function GetStatusPlayList($datas)
+    public function GetStatusPlayList(array $datas)
     {
-        $status = DB::table('playList')
-            ->select('status')
-            ->where('id', $datas['id_playlist'])
-            ->first();
+        if ($datas['IDU'] != null){
+            $status = DB::table('playList')
+                ->select('status')
+                ->where('IDU', $datas['IDU'])
+                ->first();
+        }else{
+            $status = DB::table('playList')
+                ->select('status')
+                ->where('id', $datas['id_playlist'])
+                ->first();
+        }
         
         return $status;
     }

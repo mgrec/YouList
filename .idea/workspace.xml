@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec2aa6ac-e153-45d4-87a7-816b88bd5f78" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ressources/assets/img/share.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressources/assets/css/master.css" afterPath="$PROJECT_DIR$/Ressources/assets/css/master.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ressources/assets/js/app.js" afterPath="$PROJECT_DIR$/Ressources/assets/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" afterPath="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/app/PlayList.php" afterPath="$PROJECT_DIR$/Server/app/PlayList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/web.php" afterPath="$PROJECT_DIR$/Server/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/View/pages/home.twig" afterPath="$PROJECT_DIR$/View/pages/home.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="SelimFMWK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,45 +29,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ressources/assets/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="263" column="45" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="45" />
+            <state relative-caret-position="8235">
+              <caret line="549" column="39" selection-start-line="549" selection-start-column="39" selection-end-line="549" selection-end-column="39" />
               <folding>
-                <marker date="1484252668000" expanded="true" signature="1910:2000" placeholder="..." />
-                <marker date="1484252668000" expanded="true" signature="1910:2268" placeholder="..." />
+                <marker date="1484504847000" expanded="true" signature="2358:2448" placeholder="..." />
+                <marker date="1484504847000" expanded="true" signature="2358:2716" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/pages/home.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-580">
-              <caret line="7" column="78" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="78" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -79,8 +45,28 @@
       <file leaf-file-name="PlayListController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+            <state relative-caret-position="375">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayList.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -118,10 +104,10 @@
         <option value="$PROJECT_DIR$/Server/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/View/pages/home.twig" />
         <option value="$PROJECT_DIR$/Ressources/assets/css/master.css" />
-        <option value="$PROJECT_DIR$/Ressources/assets/js/app.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/Server/routes/web.php" />
+        <option value="$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/Ressources/assets/js/app.js" />
         <option value="$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php" />
         <option value="$PROJECT_DIR$/Server/app/PlayList.php" />
       </list>
@@ -165,8 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -409,6 +393,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -501,25 +487,27 @@
       <workItem from="1483347130151" duration="7086000" />
       <workItem from="1483605707007" duration="1608000" />
       <workItem from="1483715953045" duration="496000" />
-      <workItem from="1484240731897" duration="12450000" />
+      <workItem from="1484240731897" duration="16366000" />
+      <workItem from="1484560423716" duration="204000" />
+      <workItem from="1484908219811" duration="124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100428000" />
+    <option name="totallyTimeSpent" value="104672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2907916" sideWeight="0.6788618" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30048466" sideWeight="0.6571429" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32786885" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2907916" sideWeight="0.3211382" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30048466" sideWeight="0.34285715" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -592,8 +580,8 @@
         <state relative-caret-position="5730">
           <caret line="382" column="32" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
           <folding>
-            <marker date="1484252668000" expanded="true" signature="1910:2000" placeholder="..." />
-            <marker date="1484252668000" expanded="true" signature="1910:2268" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2448" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2716" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -624,8 +612,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484252668000" expanded="true" signature="1910:2000" placeholder="..." />
-            <marker date="1484252668000" expanded="true" signature="1910:2268" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2448" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2716" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -676,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,8 +672,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484252668000" expanded="true" signature="1910:2000" placeholder="..." />
-            <marker date="1484252668000" expanded="true" signature="1910:2268" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2448" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2716" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -871,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,15 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,31 +879,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/Server/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -935,18 +893,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-580">
           <caret line="7" column="78" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ressources/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="263" column="45" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="45" />
+        <state relative-caret-position="8235">
+          <caret line="549" column="39" selection-start-line="549" selection-start-column="39" selection-end-line="549" selection-end-column="39" />
           <folding>
-            <marker date="1484252668000" expanded="true" signature="1910:2000" placeholder="..." />
-            <marker date="1484252668000" expanded="true" signature="1910:2268" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2448" placeholder="..." />
+            <marker date="1484504847000" expanded="true" signature="2358:2716" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/Http/Controllers/PlayListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/app/PlayList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

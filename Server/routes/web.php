@@ -26,6 +26,7 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('/change-playlist-status', 'PlayListController@changeStatusPlayList')->name('changeStatusPlayList');
     Route::post('/get-share-code', 'PlayListController@getShareCode')->name('getShareCode');
     Route::post('/get-current-idVid', 'PlayListController@getCurrentIdVid')->name('getCurrentIdVid');
+    Route::post('/change-current-idVid', 'PlayListController@changeCurrentIdVid')->name('changeCurrentIdVid');
 });
 
 Auth::routes();

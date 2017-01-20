@@ -30,13 +30,31 @@ $(document).ready(function () {
     id = [];
     playlist = [];
     countPlaylist = 0;
-    musicEtant = 1;
+    musicEtant = 0;
     countList = 0;
     speedOrpass = 0;
     intervalCode = null;
+    firstPlay = 1;
+
+    $.ajax({
+        url: 'http://localhost:8000/change-playlist-status',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'id_playlist': $('#idlist').text(),
+            'status': musicEtant
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+
+            }
+        }
+    });
 
     $('#share-go').click(function () {
-        clearInterval(intervalCode)
+        clearInterval(intervalCode);
        $('.share-code').fadeIn().css('display', 'block');
         intervalCode = setInterval(function () {
             $('.share-code').fadeOut();
@@ -151,15 +169,34 @@ $('#list-result').on('click', '.button-playliste', function () {
 });
 
 $('#play').click(function () {
-    
+
     if (playlist.length != 0) {
         
-        if (countPlaylist == 0) {
+        if (countPlaylist == 0 && firstPlay == 1) {
+            firstPlay = 0;
             var id = '#play' + countPlaylist + playlist[countPlaylist];
+            var idVid = playlist[countPlaylist];
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
             $('#track-bar-title').text($(id).text());
 
+            $.ajax({
+                url: 'http://localhost:8000/change-current-idVid',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'id_playlist': $('#idlist').text(),
+                    'idVid': idVid
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+
+                    }
+                }
+            });
+            
             player.loadVideoById({
                 'videoId': playlist[countPlaylist],
                 'suggestedQuality': 'large'
@@ -187,6 +224,25 @@ $('#play').click(function () {
                     $('#track-bar-title').text($(id).text());
                     $(id).css('color', 'red');
                     $(id).css('font-weight', 'bold');
+                    idVid = playlist[countPlaylist];
+
+                    $.ajax({
+                        url: 'http://localhost:8000/change-current-idVid',
+                        type: "POST",
+                        dataType: 'JSON',
+                        data: {
+                            'id_playlist': $('#idlist').text(),
+                            'idVid': idVid
+                        },
+                        success: function (data) {
+                            if (data.status == "error") {
+                                alert('votre naviagteur ne supporte pas l\'AJAX')
+                            } else {
+
+                            }
+                        }
+                    });
+                    
                 }
 
                 currentValeur = player.getCurrentTime();
@@ -278,6 +334,26 @@ $('#back').click(function () {
             });
             /*$('#track-bar-title').text($(id).text());*/
         }
+
+        var idVid = playlist[countPlaylist];
+
+        $.ajax({
+            url: 'http://localhost:8000/change-current-idVid',
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+                'id_playlist': $('#idlist').text(),
+                'idVid': idVid
+            },
+            success: function (data) {
+                if (data.status == "error") {
+                    alert('votre naviagteur ne supporte pas l\'AJAX')
+                } else {
+
+                }
+            }
+        });
+        
     } else {
         speedOrpass = 0;
     }
@@ -305,6 +381,26 @@ $('#next').click(function () {
 
             $('#play').css('display', 'none');
             $('#pause').css('display', 'block');
+
+            var idVid = playlist[countPlaylist];
+
+            $.ajax({
+                url: 'http://localhost:8000/change-current-idVid',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'id_playlist': $('#idlist').text(),
+                    'idVid': idVid
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+
+                    }
+                }
+            });
+
         }
     } else {
         speedOrpass = 0;
@@ -322,10 +418,30 @@ $('.track-list-content ').on('click', 'p', function () {
     $(this).css('color', 'red');
     $(this).css('font-weight', 'bold');
     idNow = $("p").index(this);
-    countPlaylist = idNow;
+    countPlaylist = idNow-1;
     player.loadVideoById({
         'videoId': playlist[countPlaylist],
         'suggestedQuality': 'large'
+    });
+
+
+    var idVid = playlist[countPlaylist];
+
+    $.ajax({
+        url: 'http://localhost:8000/change-current-idVid',
+        type: "POST",
+        dataType: 'JSON',
+        data: {
+            'id_playlist': $('#idlist').text(),
+            'idVid': idVid
+        },
+        success: function (data) {
+            if (data.status == "error") {
+                alert('votre naviagteur ne supporte pas l\'AJAX')
+            } else {
+
+            }
+        }
     });
 
     setInterval(function () {
@@ -346,6 +462,26 @@ $('.track-list-content ').on('click', 'p', function () {
             $('#track-bar-title').text($(id).text());
             $(id).css('color', 'red');
             $(id).css('font-weight', 'bold');
+
+
+            var idVid = playlist[countPlaylist];
+
+            $.ajax({
+                url: 'http://localhost:8000/change-current-idVid',
+                type: "POST",
+                dataType: 'JSON',
+                data: {
+                    'id_playlist': $('#idlist').text(),
+                    'idVid': idVid
+                },
+                success: function (data) {
+                    if (data.status == "error") {
+                        alert('votre naviagteur ne supporte pas l\'AJAX')
+                    } else {
+
+                    }
+                }
+            });
 
         }
 
